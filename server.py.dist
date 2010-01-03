@@ -1,0 +1,22 @@
+# This file gets distributed in the public repository. Don't put any real configuration
+# data in here because other people will see it - plus, Django doesn't even look at this file
+# Instead, make a copy of this file in the same folder and name it server.py. Edit the copy.
+
+
+# toggle Django debugging on/off (this should always be False on production)
+DEBUG = True
+
+# database configuration
+DATABASE_ENGINE = ''           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+DATABASE_NAME = ''             # Or path to database file if using sqlite3.
+DATABASE_USER = ''             # Not used with sqlite3.
+DATABASE_PASSWORD = ''         # Not used with sqlite3.
+DATABASE_HOST = ''             # Set to empty string for localhost. Not used with sqlite3.
+DATABASE_PORT = ''             # Set to empty string for default. Not used with sqlite3.
+
+# absolute path to the site root, with trailing slash
+# e.g. /Users/jason/Sites/feedmagnet/
+APP_ROOT = '/Users/jason/Sites/feedmagnet/'
+
+# Set this to a random string -- the longer, the better -- and don't share it with anybody.
+SECRET_KEY = ''
