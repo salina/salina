@@ -18,9 +18,9 @@ The following things need to be installed for this code to work correctly.
 * Django 1.1
 * MySQL
 * Python Extensions
-  - MySQLdb
-  - Markdown
-  - South
+  - mysqldb
+  - markdown
+  - bible
 
 We're planning on using DreamHost to host the site (they offer [free hosting][FreeHosting] for non profits!), so this article on [setting up Django with DreamHost][DreamHostDjango] will likely be useful.
 
