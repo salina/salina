@@ -1,0 +1,12 @@
+<html>
+    <body>
+        {% for tag in tags %}
+            <h2>{{ tag.label }}</h2>
+            {% for post in tag.post_set.all %}
+                <ul>
+                    <li>{{ post.title }}</li>
+                </ul>
+            {% endfor %}
+        {% endfor %}
+    </body>
+</html>

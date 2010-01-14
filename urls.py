@@ -8,6 +8,6 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
     
     # Example:
-    # (r'^salina/', include('salina.foo.urls')),
+    (r'^$', 'salina.content.views.home'),
     
 )

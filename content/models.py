@@ -6,7 +6,7 @@ from pybible.djangoforms import VerseField
 class Classifier(models.Model):
     """Abstract base class for all grouping/classification classes below"""
     label = models.CharField(max_length = 100)
-    slug = models.SlugField(unique = True, blank = True, help_text = "This is used by code and may show up in URLs. Use lowercase letters, numbers, and the hyphen character (-) only.")
+    slug = models.SlugField(unique=True, db_index=True, blank=True, help_text="This is used by code and may show up in URLs. Use lowercase letters, numbers, and the hyphen character (-) only.")
     def __unicode__(self):
         return self.label
     
@@ -31,6 +31,8 @@ class Tag(Classifier):
 class Series(Classifier, Scripture):
     """Tags to be applied to all docs and FAQ"""
 
+    class Meta:
+        verbose_name_plural = "Series"
 
 class ContentItem(Scripture):
     """Abstract base class for all grouping/classification classes below"""
@@ -60,6 +62,9 @@ class Audio(ContentItem):
     description = models.TextField(help_text = "A brief description of the sermon/clip. Displayed on page with audio and in lists/RSS.")
     mp3 = models.URLField(help_text = "The full URL to the MP3 file (upload to Archive.org)")
     notes = models.ManyToManyField(NotesDoc, blank = True)
+
+    class Meta:
+        verbose_name_plural = "Audio"
 
 
 class Post(ContentItem):
